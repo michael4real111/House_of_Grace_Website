@@ -59,8 +59,6 @@ class user{
                     return false;
             }
         }
-
-
 }
 
 

@@ -161,7 +161,7 @@
                 }
             }
 
-        public function getGroomsOccupations(){
+        public function getGroomsStatus(){
             try{
             $sql = "SELECT * FROM `status`";
             $result = $this->db->query($sql);
@@ -171,7 +171,7 @@
                 return false;
         }
         }
-        public function getBridesOccupations(){
+        public function getBridesStatus(){
             try{
             $sql = "SELECT * FROM `status`";
             $result = $this->db->query($sql);
@@ -201,7 +201,32 @@
                 return false;
         }
         }
-     
+        public function getStatusById($id){
+            try{
+            $sql = "SELECT * FROM `status` where status_id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id',$id);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+            } catch (PDOExeption $e) {
+                echo $e->getMessage();
+                return false;
+        }
+        }
+        public function getParishById($id){
+            try{
+            $sql = "SELECT * FROM `parish` where parish_id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id',$id);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            return $result;
+            } catch (PDOExeption $e) {
+                echo $e->getMessage();
+                return false;
+        }
+        }
     }
 
 ?>

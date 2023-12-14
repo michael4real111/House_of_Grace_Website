@@ -2,6 +2,7 @@
     $title = 'Success';
     require_once 'includes/header.php';
     require_once 'db/conn.php';
+    require_once 'sendemail.php';
 
     if (isset($_POST['submit'])){
         $gfname = $_POST['g_FirstName'];
@@ -36,8 +37,14 @@
         $isSuccess = $crud->insert($gfname,$gmname,$glname,$gdob,$gage,$gstatus,$goccupation,$gaddress,$gtown,$gparish,$gffname,
         $gfmname,$gflname,$bfname,$bmname,$blname,$bdob,$bage,$bstatus,$boccupation,$baddress,$btown,
         $bparish,$bffname,$bfmname,$bflname,$contact,$email);
+        $gStatusName= $crud->getStatusById($gstatus);
+        $bStatusName= $crud->getStatusById($bstatus);
+        $gParishName= $crud->getParishById($gparish);
+        $bParishName= $crud->getParishById($bparish);
+
 
         if($isSuccess){
+            SendEmail::SendMail($email,'Wedding Details for House of Grace', 'You have successfully submitted your marriage details, we will contact soon');
             include 'includes/successmessage.php';
         }
         else{
@@ -70,13 +77,13 @@
                 <?php echo  $_POST['g_Age'];?></p>
 
             <p class="card-text"> Marital Status: 
-                <?php echo  $_POST['g_Status'];?></p>    
+                <?php echo  $gStatusName['marrital_status'];?></p>    
             
             <p class="card-text"> Address: 
                 <?php echo  $_POST['g_Address'] . " , " . $_POST['g_Town'];?></p>
 
             <p class="card-text"> Parish: 
-                <?php echo  $_POST['g_Parish'];?></p>
+                <?php echo  $gParishName['parish_name'];?></p>
                 
             <p class="card-text"> Father's name: 
                 <?php echo $_POST['g_FatherFirstName'] . " " . $_POST['g_FatherMiddleName'] . " " . $_POST['g_FatherLastName']; ?></p>    
@@ -98,17 +105,20 @@
                 <?php echo  $_POST['b_Age'];?></p>
 
             <p class="card-text"> Marital Status: 
-                <?php echo  $_POST['b_Status'];?></p>    
+                <?php echo  $bStatusName['marrital_status'];?></p>    
             
             <p class="card-text"> Address: 
                 <?php echo  $_POST['b_Address'] . " , " . $_POST['b_Town'];?></p>
 
             <p class="card-text"> Parish: 
-                <?php echo  $_POST['b_Parish'];?></p>
-                
+                <?php echo  $bParishName['parish_name'];?></p>
+            
             <p class="card-text"> Father's name: 
                 <?php echo $_POST['b_FatherFirstName'] . " " . $_POST['b_FatherMiddleName'] . " " . $_POST['b_FatherLastName']; ?></p>    
-
+            </div>
+            </div>
+            <div class="card">
+            <div class="card-body">  
             <p class="card-text"> Contact Number: 
                 <?php echo  $_POST['contactnumber'];?></p>
 
@@ -120,7 +130,8 @@
 
 <br>
 <br>
-<button type="submit" name = "submit" class="btn btn-primary">Confirm</button>
+<a href ="index.php" class="btn btn-primary">Confirm</a>
+
     <br>
     <br>
     <br>

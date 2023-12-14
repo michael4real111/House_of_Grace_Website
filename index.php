@@ -3,8 +3,8 @@
     require_once 'includes/header.php';
     require_once 'db/conn.php';
 
-    $groomstatusresults =$crud -> getGroomsOccupations();
-    $bridestatusresults =$crud -> getBridesOccupations();
+    $groomstatusresults =$crud -> getGroomsStatus();
+    $bridestatusresults =$crud -> getBridesStatus();
     $groomparishresults =$crud -> getGroomsParish();
     $brideparishresults =$crud -> getBridesParish();
 ?>

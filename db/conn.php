@@ -1,12 +1,12 @@
 <?php
     //Development connection
     $host = '127.0.0.1';
-    $db = 'applications_db';
+    $db = 'weddings_db';
     $user = 'root';
     $pass = '';
     $charset = 'utf8mb4';
 
-    // $host = 'sql302.infinityfree.com';
+    //$host = 'sql302.infinityfree.com';
     //$db = 'if0_35614255_db_houseofgrace';
     //$user = 'if0_35614255';
     //$pass = 'dOUNPCJTrJ';  
