@@ -13,7 +13,7 @@
     <br/>
     <br/>
     <h2 class = "text-center" >Please enter Groom's details</h2>
-    <form method ="post" action = "success.php">
+    <form method ="post" action = "success.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="g_FirstName">Groom's First Name</label>
             <input required type="text" class="form-control" id="g_FirstName" name ="g_FirstName">
@@ -214,6 +214,7 @@
         </div>
         <br/>
         <div class="custom-file">
+            
             <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
              <label class="custom-file-lable" for="avatar">Choose File</label>
              <small id="avatar" class="form-text text-danger">Please upload a government isssued ID (Driver's Licence, National ID, Passport, Voter's ID).</small>
@@ -223,8 +224,6 @@
         <button type="submit" name = "submit" class="btn btn-primary btn-block">Submit</button>
       
 </form>
-        <br/>
-        <br/>
-        <br/>
+       
 
 <?php require_once 'includes/footer.php'; ?>

@@ -17,8 +17,7 @@ include_once 'includes/session.php'?>
     <title>Application - <?php echo $title ?></title>
   </head>
   <body>
-  <div class = "container">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="index.php">House of Grace Application</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,4 +39,5 @@ include_once 'includes/session.php'?>
       </div>
       </div>
     </nav>
+  <div class = "container">
     <br/>

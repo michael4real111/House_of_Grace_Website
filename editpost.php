@@ -18,7 +18,7 @@
         $gffname = $_POST['g_FatherFirstName'];
         $gfmname = $_POST['g_FatherMiddleName'];
         $gflname = $_POST['g_FatherLastName'];
-        $bmname = $_POST['b_FirstName'];
+        $bfname = $_POST['b_FirstName'];
         $bmname = $_POST['b_MiddleName'];
         $blname = $_POST['b_LastName'];
         $bdob = $_POST['b_Dob'];

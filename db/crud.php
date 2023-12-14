@@ -63,7 +63,7 @@
         $gfmname,$gflname,$bfname,$bmname,$blname,$bdob,$bage,$bstatus,$boccupation,$baddress,$btown,
         $bparish,$bffname,$bfmname,$bflname,$contact,$email){
             try {
-                $sql = "UPDATE weddings SET g_firstname = :g_firstname ,g_middlename = :g_middlename ,g_lastname = :g_lastname,
+                $sql = "UPDATE couples_data SET g_firstname = :g_firstname ,g_middlename = :g_middlename ,g_lastname = :g_lastname,
                 g_dateofbirth = :g_dateofbirth ,g_age = :g_age ,g_status_id = :g_status,g_occupation = :g_occupation, 
                 g_address = :g_address,g_town = :g_town,g_parish_id = :g_parish,g_father_fname = :g_father_fname,
                 g_father_mname = :g_father_mname,g_father_lname = :g_father_lname,b_firstname = :b_firstname,
@@ -74,35 +74,35 @@
                 $stmt = $this-> db->prepare($sql);
 
                 $stmt->bindparam(':coupleid',$id);
-                $stmt->bindparam(':gfname',$gfname);
-                $stmt->bindparam(':gmname',$gmname);
-                $stmt->bindparam(':glname',$glname);
-                $stmt->bindparam(':gdob',$gdob);
-                $stmt->bindparam(':gage',$gage);
-                $stmt->bindparam(':gstatus',$gstatus);
-                $stmt->bindparam(':goccupation',$goccupation);
-                $stmt->bindparam(':gaddress',$gaddress);
-                $stmt->bindparam(':gtown',$gtown);
-                $stmt->bindparam(':gparish',$gparish);
-                $stmt->bindparam(':gffname',$gffname);
-                $stmt->bindparam(':gfmname',$gfmname);
-                $stmt->bindparam(':gflname',$gflname);
+                $stmt->bindparam(':g_firstname',$gfname);
+                $stmt->bindparam(':g_middlename',$gmname);
+                $stmt->bindparam(':g_lastname',$glname);
+                $stmt->bindparam(':g_dateofbirth',$gdob);
+                $stmt->bindparam(':g_age',$gage);
+                $stmt->bindparam(':g_status',$gstatus);
+                $stmt->bindparam(':g_occupation',$goccupation);
+                $stmt->bindparam(':g_address',$gaddress);
+                $stmt->bindparam(':g_town',$gtown);
+                $stmt->bindparam(':g_parish',$gparish);
+                $stmt->bindparam(':g_father_fname',$gffname);
+                $stmt->bindparam(':g_father_mname',$gfmname);
+                $stmt->bindparam(':g_father_lname',$gflname);
 
-                $stmt->bindparam(':bfname',$bfname);
-                $stmt->bindparam(':bmname',$bmname);
-                $stmt->bindparam(':blname',$blname);
-                $stmt->bindparam(':bdob',$bdob);
-                $stmt->bindparam(':bage',$bage);
-                $stmt->bindparam(':bstatus',$bstatus);
-                $stmt->bindparam(':boccupation',$boccupation);
-                $stmt->bindparam(':baddress',$baddress);
-                $stmt->bindparam(':btown',$btown);
-                $stmt->bindparam(':bparish',$bparish);
-                $stmt->bindparam(':bffname',$bffname);
-                $stmt->bindparam(':bfmname',$bfmname);
-                $stmt->bindparam(':bflname',$bflname);
+                $stmt->bindparam(':b_firstname',$bfname);
+                $stmt->bindparam(':b_middlename',$bmname);
+                $stmt->bindparam(':b_lastname',$blname);
+                $stmt->bindparam(':b_dateofbirth',$bdob);
+                $stmt->bindparam(':b_age',$bage);
+                $stmt->bindparam(':b_status',$bstatus);
+                $stmt->bindparam(':b_occupation',$boccupation);
+                $stmt->bindparam(':b_address',$baddress);
+                $stmt->bindparam(':b_town',$btown);
+                $stmt->bindparam(':b_parish',$bparish);
+                $stmt->bindparam(':b_father_fname',$bffname);
+                $stmt->bindparam(':b_father_mname',$bfmname);
+                $stmt->bindparam(':b_father_lname',$bflname);
 
-                $stmt->bindparam(':contact',$contact);
+                $stmt->bindparam(':contactnumber',$contact);
                 $stmt->bindparam(':email',$email);
 
                 $stmt ->execute();
@@ -150,9 +150,9 @@
 
         public function deleteApplicant($id){
             try{            
-                    $sql = "delete from applicants where applicant_id =:applicantid";
+                    $sql = "delete from couples_data where couple_id =:coupleid";
                     $stmt =$this->db->prepare($sql);
-                    $stmt->bindparam(':applicantid', $id);
+                    $stmt->bindparam(':coupleid', $id);
                     $stmt->execute();
                     return true;
                 } catch (PDOExeption $e) {

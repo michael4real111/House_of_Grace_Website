@@ -4,10 +4,10 @@
     require_once 'includes/auth_check.php';
     require_once 'db/conn.php';
 
-    $groomstatusresults =$crud -> getGroomsStatus();
-    $bridestatusresults =$crud -> getBridesStatus();
-    $groomparishresults =$crud -> getGroomsParish();
-    $brideparishresults =$crud -> getBridesParish();
+    $groomstatusresults =$crud->getGroomsStatus();
+    $bridestatusresults =$crud->getBridesStatus();
+    $groomparishresults =$crud->getGroomsParish();
+    $brideparishresults =$crud->getBridesParish();
     
     if(!isset($_GET['coupleid'])){
        // echo "<h1 class ='text-danger'> Please check details </h1>"; 
@@ -32,8 +32,8 @@
 
         <div class="form-group">
             <label for="g_MiddleName">Groom's Middle Name</label>
-            <input required type="text" class="form-control" value ="<?php echo $result['g_middlename'] ?>" id="g_FirstMiddleName" name ="g_FirstMiddleName">
-            <small id="FNameHelp" class="form-text text-muted">Please enter groom's middle name.</small>
+            <input required type="text" class="form-control" value ="<?php echo $result['g_middlename'] ?>" id="g_MiddleName" name ="g_MiddleName">
+            <small id="MNameHelp" class="form-text text-muted">Please enter groom's middle name.</small>
         </div>
 
         <div class="form-group">
@@ -78,15 +78,15 @@
         </div>
 
         <div class="form-group">
-        <label for="g_Town">Address</label>
+        <label for="g_Town">Town</label>
             <input required type="text" class="form-control" value ="<?php echo $result['g_town'] ?>" id="g_Town" name="g_Town">
             <small id="TownHelp" class="form-text text-muted">Please enter groom's Town. PS If in St. Andrew or Kingston, please state (eg. Kgn 1, Kgn 6, Kgn 8).</small>
         </div>
 
 
         <div class="form-group">
-            <label for="Parish">Parish</label>
-            <select class="form-control" id="Parish" name="Parish">
+            <label for="g_Parish">Parish</label>
+            <select class="form-control" id="g_Parish" name="g_Parish">
             <?php while($r = $groomparishresults->fetch(PDO::FETCH_ASSOC)){ ?>
                 <option value ="<?php echo $r['parish_id'] ?>"
                 <?php if ($r['parish_name'] == $result['parish_name']) echo 'selected' ?>><?php echo $r['parish_name'];?></option>
@@ -104,7 +104,7 @@
         <div class="form-group">
         <label for="g_FatherMiddleName">Groom's Fathers Middle Name</label>
             <input required type="text" class="form-control" value ="<?php echo $result['g_father_mname'] ?>" id="g_FatherMiddleName" name="g_FatherMiddleName">
-            <small id="LNameHelp" class="form-text text-muted">Please enter groom's fathers middle name "IF ANY".</small>
+            <small id="LNameHelp" class="form-text text-muted">Please enter groom's fathers middle name "IF ANY".IF NOT ENTER N/A.</small>
         </div>
 
         <div class="form-group">
@@ -129,7 +129,7 @@
 
         <div class="form-group">
             <label for="b_MiddleName">Bride's Middle Name</label>
-            <input required type="text" class="form-control" value ="<?php echo $result['b_middlename'] ?>" id="b_FirstMiddleName" name ="b_FirstMiddleName">
+            <input required type="text" class="form-control" value ="<?php echo $result['b_middlename'] ?>" id="b_MiddleName" name ="b_MiddleName">
             <small id="FNameHelp" class="form-text text-muted">Please enter Bride's middle name.</small>
         </div>
 
@@ -175,15 +175,15 @@
         </div>
 
         <div class="form-group">
-        <label for="b_Town">Address</label>
+        <label for="b_Town">Town</label>
             <input required type="text" class="form-control" value ="<?php echo $result['b_town'] ?>" id="b_Town" name="b_Town">
             <small id="TownHelp" class="form-text text-muted">Please enter bride's Town. PS If in St. Andrew or Kingston, please state (eg. Kgn 1, Kgn 6, Kgn 8).</small>
         </div>
 
 
         <div class="form-group">
-            <label for="Parish">Parish</label>
-            <select class="form-control" id="Parish" name="Parish">
+            <label for="b_Parish">Parish</label>
+            <select class="form-control" id="b_Parish" name="b_Parish">
             <?php while($r = $brideparishresults->fetch(PDO::FETCH_ASSOC)){ ?>
                 <option value ="<?php echo $r['parish_id'] ?>"
                 <?php if ($r['parish_name'] == $result['parish_name']) echo 'selected' ?>>
@@ -202,7 +202,7 @@
         <div class="form-group">
         <label for="b_FatherMiddleName">Groom's Fathers Middle Name</label>
             <input required type="text" class="form-control" value ="<?php echo $result['b_father_mname'] ?>" id="b_FatherMiddleName" name="b_FatherMiddleName">
-            <small id="LNameHelp" class="form-text text-muted">Please enter bride's fathers middle name "IF ANY".</small>
+            <small id="LNameHelp" class="form-text text-muted">Please enter bride's fathers middle name "IF ANY". IF NOT ENTER N/A.</small>
         </div>
 
         <div class="form-group">
