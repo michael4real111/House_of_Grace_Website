@@ -1,4 +1,4 @@
-<div id="footer" class ="p-3 mb-2 bg-primary text-white bottom">
+<div id="footer" class ="p-3 text-white fixed-bottom" style="background-color: #6f42c1;">
     <p class ="text-center"> Copyright &copy; - House of Grace Event and Wedding Services <?php echo date('y');?></p>
 </div>
     <!-- Optional JavaScript -->

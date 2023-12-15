@@ -15,7 +15,10 @@
    
 ?>
 
-            <div class="card">
+<img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.png" : $result['avatar_path'] ; ?>" 
+class ="rounded-cicle" style="width: 20%; height: 20%"/>
+
+            <div class="card" style="width: 18rem;">
             <div class="card-body">
             <h5 class="card-title"> <br/>
                 <p class="card-text"> Groom's Details</p>
@@ -43,7 +46,7 @@
                 <?php echo $result['g_father_fname'] . " " . $result['g_father_mname'] . " " . $result['g_father_lname']; ?></p>    
             </div>
             </div>
-            <div class="card">
+            <div class="card" style="width: 18rem;">
             <div class="card-body">
             <h5 class="card-title"><br/>
             <p class="card-text"> Bride's Details</p>
@@ -72,7 +75,7 @@
             </div>
             </div>
             
-                <div class="card">
+                <div class="card" style="width: 18rem;">
             <div class="card-body">
             <h5 class="card-title"><br/>
             <p class="card-text"> Contact Number: 
@@ -83,6 +86,20 @@
             </div>
             </div>
             <br/>
+            <img src="<?php echo empty($result['g_identification']) ? "uploads/blank.png" : $result['g_identification'] ; ?>" 
+            style="width: 20%; height: 20%"/>
+            <img src="<?php echo empty($result['b_identification']) ? "uploads/blank.png" : $result['b_identification'] ; ?>" 
+            style="width: 20%; height: 20%"/><br>
+            <img src="<?php echo empty($result['g_birthcert']) ? "uploads/blank.png" : $result['g_birthcert'] ; ?>" 
+            style="width: 20%; height: 20%"/>
+            <img src="<?php echo empty($result['b_birthcert']) ? "uploads/blank.png" : $result['b_birthcert'] ; ?>" 
+            style="width: 20%; height: 20%"/><br>
+            <img src="<?php echo empty($result['ministers_licence']) ? "uploads/blank.png" : $result['ministers_licence'] ; ?>" 
+            style="width: 20%; height: 20%"/>
+            <img src="<?php echo empty($result['other']) ? "uploads/blank.png" : $result['other'] ; ?>" 
+            style="width: 20%; height: 20%"/><br>
+
+
                 <a href ="viewrecords.php" class="btn btn-info">Back to List</a>
                 <a href ="edit.php?coupleid=<?php echo $result['couple_id'] ?>" class="btn btn-primary">Edit</a>
                 <a onclick="return confirm('Are you sure you want to delete record?');"
@@ -93,5 +110,10 @@
     <br>
     <br>
     <br>
+    <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
 <?php require_once 'includes/footer.php'; ?>

@@ -38,7 +38,7 @@
                 </td>
             </tr>
         </table><br/><br/>
-        <input type="submit" value="Login" class="btn btn-primary btn-block"><br/>
+        <input type="submit" value="Login" class="btn btn-primary btn-block" style="background-color: #6f42c1;"><br/>
         <a href="#"> Forget Password </a>
     </form><br/><br/><br/><br/>
 

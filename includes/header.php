@@ -14,17 +14,17 @@ include_once 'includes/session.php'?>
     
     <link rel="stylesheet" hrel= "css/site.css"/>
 
-    <title>Application - <?php echo $title ?></title>
+    <title>House of Grace - <?php echo $title ?></title>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="index.php">House of Grace Application</a>
+  <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #6f42c1;">
+      <a class="navbar-brand" href="welcomepage.php">House of Grace Application</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="index.php">Application Form <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="viewrecords.php">View Wedding Applicatons</a>
         </div>
       <div class="navbar-nav ml-auto">

@@ -20,7 +20,7 @@
 ?>
 
     <h1 class = "text-center" >Edit Applicant</h1>
-
+    <h2 class = "text-center" >Groom's Details</h2>
     <form method ="post" action = "editpost.php">
         <input type="hidden" name="coupleid" value="<?php echo $result['couple_id'] ?>" />
        
@@ -63,6 +63,7 @@
                 <?php } ?>
     </select>
             <small id="gstatusHelp" class="form-text text-muted">Please select Marrital Status.</small>
+            </div>   
 
         <div class="form-group">
             <label for="g_Occupation">Groom's Occupation</label>
@@ -119,7 +120,7 @@
         <br/>
 
 
-        <h2 class = "text-center" >Please enter Bride's details</h2>
+        <h2 class = "text-center" >Bride's Details</h2>
 
         <div class="form-group">
             <label for="b_FirstName">Bride's First Name</label>
@@ -158,8 +159,9 @@
                 <option value ="<?php echo $r['status_id'] ?>"
                 <?php if ($r['marrital_status'] == $result['marrital_status']) echo 'selected' ?>><?php echo $r['marrital_status'];?></option>
                 <?php } ?>
-    </select>
+       </select>
             <small id="bstatusHelp" class="form-text text-muted">Please select Marrital Status.</small>
+        </div>
 
         <div class="form-group">
             <label for="b_Occupation">Bride's Occupation</label>
@@ -222,10 +224,15 @@
             <input type="text" class="form-control" value ="<?php echo $result['contactnumber'] ?>" id="contactnumber" name="contactnumber">
             <small id="contactHelp" class="form-text text-muted">Please enter your contact number.</small>
         </div>
+        <br>
 
         <a href ="viewrecords.php" class="btn btn-default">Back to List</a>
         <button type="submit" name = "submit" class="btn btn-success btn">Save Changes</button>
-      
+        <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </form>
 
     <?php } ?>

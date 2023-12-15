@@ -8,16 +8,18 @@
 
         public function insert ($gfname,$gmname,$glname,$gdob,$gage,$gstatus,$goccupation,$gaddress,$gtown,$gparish,$gffname,
                                 $gfmname,$gflname,$bfname,$bmname,$blname,$bdob,$bage,$bstatus,$boccupation,$baddress,$btown,
-                                $bparish,$bffname,$bfmname,$bflname,$contact,$email){
+                                $bparish,$bffname,$bfmname,$bflname,$contact,$email,$avatar_path,$g_identification,$b_identification,
+                                $g_birthcert,$b_birthcert,$ministerslicence,$other){
             try {
                 $sql = "INSERT INTO couples_data (g_firstname,g_middlename,g_lastname,g_dateofbirth,g_age,g_status_id,g_occupation,
                                                 g_address,g_town,g_parish_id,g_father_fname,g_father_mname,g_father_lname,
                                                 b_firstname,b_middlename,b_lastname,b_dateofbirth,b_age,b_status_id,b_occupation,
                                                 b_address,b_town,b_parish_id,b_father_fname,b_father_mname,b_father_lname,
-                                                contactnumber,email) 
+                                                contactnumber,email,avatar_path,g_identification,b_identification,g_birthcert,
+                                                b_birthcert,ministers_licence,other) 
                 VALUES (:gfname, :gmname, :glname, :gdob, :gage, :gstatus, :goccupation, :gaddress,:gtown, :gparish, :gffname, :gfmname,:gflname,
                         :bfname, :bmname, :blname, :bdob, :bage, :bstatus, :boccupation, :baddress,:btown, :bparish, :bffname, :bfmname,:bflname,
-                        :contact, :email)";
+                        :contact,:email, :avatar_path, :g_identification,  :b_identification, :g_birthcert,:b_birthcert, :ministerslicence, :other)";
                 $stmt = $this-> db->prepare($sql);
 
                 $stmt->bindparam(':gfname',$gfname);
@@ -50,6 +52,13 @@
 
                 $stmt->bindparam(':contact',$contact);
                 $stmt->bindparam(':email',$email);
+                $stmt->bindparam(':avatar_path',$avatar_path);
+                $stmt->bindparam(':g_identification',$g_identification);
+                $stmt->bindparam(':b_identification',$b_identification);
+                $stmt->bindparam(':g_birthcert',$g_birthcert);
+                $stmt->bindparam(':b_birthcert',$b_birthcert);
+                $stmt->bindparam(':ministerslicence',$ministerslicence);
+                $stmt->bindparam(':other',$other);
 
                 $stmt ->execute();
                 return true;
