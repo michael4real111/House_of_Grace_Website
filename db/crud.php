@@ -136,10 +136,10 @@
         public function getWeddingDetails($id){
             try{
             $sql = "select c.couple_id, c.g_firstname, c.g_middlename, c.g_lastname, c.g_dateofbirth, c.g_age, a.marrital_status, c.g_occupation,
-            c.g_address, c.g_town, d.parish_name, c.g_father_fname, c.g_father_mname,c.g_father_lname,
-            c.b_firstname, c.b_middlename, c.b_lastname, c.b_dateofbirth, c.b_age, b.marrital_status, c.b_occupation,
-            c.b_address, c.b_town, e.parish_name, c.b_father_fname, c.b_father_mname, c.b_father_lname,
-            c.contactnumber, c.email 
+            c.g_address, c.g_town, d.parish_name, c.g_father_fname, c.g_father_mname,c.g_father_lname, c.b_firstname, c.b_middlename, c.b_lastname,
+            c.b_dateofbirth, c.b_age, b.marrital_status, c.b_occupation, c.b_address, c.b_town, e.parish_name, c.b_father_fname, c.b_father_mname, 
+            c.b_father_lname, c.contactnumber, c.email, c.avatar_path, c.g_identification, c.b_identification, c.g_birthcert, c.b_birthcert, 
+            c.ministers_licence, c.other 
             from couples_data c 
             inner join status a on c.g_status_id = a.status_id 
             inner join status b on c.b_status_id = b.status_id

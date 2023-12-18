@@ -18,7 +18,8 @@ include_once 'includes/session.php'?>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #6f42c1;">
-      <a class="navbar-brand" href="welcomepage.php">House of Grace Application</a>
+      <a class="navbar-brand" href="welcomepage.php">
+      <img src="img/HG.png" width="40" height="30" class="d-inline-block align-top" alt="">ouse of Grace</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

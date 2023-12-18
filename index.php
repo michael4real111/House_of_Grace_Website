@@ -249,7 +249,28 @@
         <label for="other" class ="form-lable"><br>Other Supporting Docuemnts</label> 
             <input type="file" accept="image/*" class="form-control" id="other" name="other">
              <small id="other" class="form-text text-danger">Please upload any addition documents (Final Divorce Decree / Deed Poll / Previous Marriage & Death Certificate if Widow/Widower).</small>
-             <br><br>
+             <br>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+            <label class="form-check-label" for="invalidCheck3">
+            I, hereby declare and affirm that the information provided by me in the above form is true, accurate, and complete to the best of my<br>
+            knowledge. I understand that any false statements or omissions may result in the rejection of my application or other adverse<br>
+            consequences.<br><br>
+
+            I acknowledge that the information submitted in this form may be used by House of Grace for the purposes specified in the form and for<br> 
+            internal business operations. I agree to notify House of grace promptly of any changes to the information provided in the form.<br><br>
+
+            I understand that the information submitted is subject to the terms and conditions outlined by House of Grace, and I agree to comply<br> 
+            with these terms.<br><br>
+
+            I further acknowledge that House of Grace may use the information provided for processing and communicating with me regarding the<br>
+            matter referenced in the form.<br><br>
+
+            By selecting the box, I affirm my understanding of and agreement to the above statements.<br>
+            </label>
+            </div>
         </div>
 
         <button type="submit" name = "submit" class="btn btn-primary btn-block" style="background-color: #6f42c1;">Submit</button>

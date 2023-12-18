@@ -19,7 +19,7 @@
         $result = $crud->getWeddingDetails($id);       
 ?>
 
-    <h1 class = "text-center" >Edit Applicant</h1>
+    <h1 class = "text-center" >Edit Application</h1>
     <h2 class = "text-center" >Groom's Details</h2>
     <form method ="post" action = "editpost.php">
         <input type="hidden" name="coupleid" value="<?php echo $result['couple_id'] ?>" />
@@ -215,7 +215,7 @@
         <div class="form-group">
             <label for="Email1">Email address</label>
             <input type="email" class="form-control" value ="<?php echo $result['email'] ?> "id="Email1" 
-            aria-describedby="emailHelp" placeholder="Enter email" name="Email1">
+            aria-describedby="emailHelp" placeholder="Enter email" name="Email1" readonly>
             <small id="emailHelp" class="form-text text-muted">Please enter your email address.</small>
         </div>
 

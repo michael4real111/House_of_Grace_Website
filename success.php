@@ -186,7 +186,7 @@
 
 <br>
 <br>
-<a href ="index.php" class="btn btn-primary">Confirm</a>
+<a href ="welcomepage.php" class="btn btn-primary">Confirm</a>
 
     <br>
     <br>

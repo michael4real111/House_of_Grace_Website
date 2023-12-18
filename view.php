@@ -16,9 +16,9 @@
 ?>
 
 <img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.png" : $result['avatar_path'] ; ?>" 
-class ="rounded-cicle" style="width: 20%; height: 20%"/>
+class ="rounded-circle" style="width: 20%; height: 20%"/>
 
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 40rem;">
             <div class="card-body">
             <h5 class="card-title"> <br/>
                 <p class="card-text"> Groom's Details</p>
@@ -46,7 +46,7 @@ class ="rounded-cicle" style="width: 20%; height: 20%"/>
                 <?php echo $result['g_father_fname'] . " " . $result['g_father_mname'] . " " . $result['g_father_lname']; ?></p>    
             </div>
             </div>
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 40rem;">
             <div class="card-body">
             <h5 class="card-title"><br/>
             <p class="card-text"> Bride's Details</p>
@@ -75,7 +75,7 @@ class ="rounded-cicle" style="width: 20%; height: 20%"/>
             </div>
             </div>
             
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 40rem;">
             <div class="card-body">
             <h5 class="card-title"><br/>
             <p class="card-text"> Contact Number: 
