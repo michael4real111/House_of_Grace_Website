@@ -25,7 +25,7 @@ include_once 'includes/session.php'?>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link active" href="index.php">Application Form <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="index.php">Wedding Application Form <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="viewrecords.php">View Wedding Applicatons</a>
         </div>
       <div class="navbar-nav ml-auto">
