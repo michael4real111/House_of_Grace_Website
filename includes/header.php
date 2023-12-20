@@ -25,7 +25,16 @@ include_once 'includes/session.php'?>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto">
-            <a class="nav-item nav-link active" href="index.php">Wedding Application Form <span class="sr-only">(current)</span></a>
+            <li class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" 
+              aria-haspopup="true" aria-expanded="false">Application Forms</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="index.php">Wedding Application</a>
+                <a class="dropdown-item" href="eventform.php">Event Application</a>
+                <a class="dropdown-item" href="ministerslicenceform.php">Mininster's Licence Application</a>
+              </div>
+            </li>
+            <a class="nav-item nav-link active" href="rental.php">Rentals<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="viewrecords.php">View Wedding Applicatons</a>
         </div>
       <div class="navbar-nav ml-auto">

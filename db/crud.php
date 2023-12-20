@@ -133,6 +133,31 @@
                 return false;           
         }
         }
+        public function insertevent ($efname,$elname,$doe,$toe,$eamount,$etype,$evenue,$contact,$email){ 
+            try {
+                $sql = "INSERT INTO events (e_firstname,e_lastname,doe,toe,e_type,e_amount,space_id,email,contact_number) 
+                VALUES (:efname, :elname, :, :doe, :toe, :eamount, :etype,:evenue, :email, :contact)";
+                $stmt = $this-> db->prepare($sql);
+
+                $stmt->bindparam(':efname',$efname);
+                $stmt->bindparam(':elname',$elname);
+                $stmt->bindparam(':doe',$doe);
+                $stmt->bindparam(':toe',$toe);
+                $stmt->bindparam(':eamount',$eamount);
+                $stmt->bindparam(':etype',$etype);
+                $stmt->bindparam(':evenue',$evenue);
+                $stmt->bindparam(':email',$email);
+                $stmt->bindparam(':contact',$contact); 
+
+            
+                $stmt ->execute();
+                return true;
+
+            } catch (PDOExeption $e) {
+                echo $e->getMessage();
+                return false;
+            }
+        } 
         public function getWeddingDetails($id){
             try{
             $sql = "select c.couple_id, c.g_firstname, c.g_middlename, c.g_lastname, c.g_dateofbirth, c.g_age, a.marrital_status, c.g_occupation,
@@ -204,6 +229,29 @@
             try{
             $sql = "SELECT * FROM `parish`";
             $result = $this->db->query($sql);
+            return $result;
+            } catch (PDOExeption $e) {
+                echo $e->getMessage();
+                return false;
+        }
+        }
+        public function getEventsVenue(){
+            try{
+            $sql = "SELECT * FROM `venue`";
+            $result = $this->db->query($sql);
+            return $result;
+            } catch (PDOExeption $e) {
+                echo $e->getMessage();
+                return false;
+        }
+        }
+        public function getVenueById($id){
+            try{
+            $sql = "SELECT * FROM `venue` where venue_id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindparam(':id',$id);
+            $stmt->execute();
+            $result = $stmt->fetch();
             return $result;
             } catch (PDOExeption $e) {
                 echo $e->getMessage();
